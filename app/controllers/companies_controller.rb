@@ -1,8 +1,4 @@
 class CompaniesController < ApplicationController
-  def new
-    @company = Company.new
-  end
-
   # Cria uma empresa e faz o link com o usuário logado
   def create
     company = Company.new(company_params)

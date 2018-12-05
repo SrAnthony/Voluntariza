@@ -1,8 +1,4 @@
 class VolunteersController < ApplicationController
-  def new
-    @volunteer = Volunteer.new
-  end
-
   # Cria uma empresa e faz o link com o usuário logado
   def create
     volunteer = Volunteer.new(volunteer_params)
