@@ -1,0 +1,32 @@
+.application-body
+  background: #F0F2F5
+  min-height: calc(100vh - 64px)
+
+.app-wrapper
+  max-width: 1200px
+  margin: auto
+
+.app-block
+  background: white
+  border-radius: 3px
+  box-shadow: 0 0.6rem 1.4rem -0.4rem #d5dae2
+  transition: box-shadow .3s ease-in-out
+
+  .app-block-title
+    padding: 15px 20px
+    border-bottom: 1px solid #ddd
+    display: flex
+    justify-content: flex-end
+
+    *:first-child
+      justify-self: flex-start
+      flex: 1
+
+    & > *
+      margin: 0
+
+  &:hover
+    box-shadow: 0 1.8rem 1.8rem -0.5rem #cbd1dc
+
+  .app-block-content
+    padding: 20px

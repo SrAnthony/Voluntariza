@@ -1,4 +1,8 @@
 class CompaniesController < ApplicationController
+  def index
+    @companies = Company.all.order('id DESC')
+  end
+
   # Cria uma empresa e faz o link com o usuário logado
   def create
     company = Company.new(company_params)

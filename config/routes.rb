@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'events#index'
 
+  get 'companies' => 'companies#index', as: :companies
   get 'companies/new'
   post 'companies' => 'companies#create'
 

@@ -1,24 +1,34 @@
-<p id="notice"><%= notice %></p>
+<section class="app-wrapper">
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
+  <div class="app-block">
+    <div class="app-block-title">
+      <h3>
+        <i class="lnr lnr-flag"></i> Eventos
+      </h3>
 
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date %>
-</p>
+      <%= link_to 'Editar', edit_event_path(@event) if user_signed_in? && current_user.company == @event.company %>
+    </div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
+    <div class="app-block-content">
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
+      <p>
+        <% if @event.description.present? %>
+          <%= @event.description %>
+        <% else %>
+          Sem descrição
+        <% end %>
+      </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+      <p>
+        <strong>Data de início:</strong>
+        <%= @event.start_date.strftime('%d/%m/%Y - %H:%M') %>
+      </p>
+
+      <p>
+        <strong>Data de término:</strong>
+        <%= @event.end_date.strftime('%d/%m/%Y - %H:%M') %>
+      </p>
+
+    </div>
+  </div>
+</section>

@@ -34,4 +34,9 @@ class User < ApplicationRecord
   def volunteer
     Volunteer.where(user_id: id).first
   end
+
+  def name
+    return company.name if company?
+    volunteer.name
+  end
 end

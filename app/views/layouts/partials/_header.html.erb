@@ -1,0 +1,28 @@
+<header class="app-header">
+  <div class="app-wrapper app-header-wrapper">
+    <div class="app-header-logo">
+      <h2>Voluntariza</h2>
+    </div>
+
+    <ul class="app-header-list">
+      <li>
+        <%= link_to events_path, class: "#{'active' if controller_name == 'events'}" do %>
+          <i class="lnr lnr-flag"></i> Eventos
+        <% end %>
+      </li>
+      <li>
+        <%= link_to companies_path, class: "#{'active' if controller_name == 'companies'}" do %>
+          <i class="lnr lnr-apartment"></i> Empresas
+        <% end %>
+      </li>
+    </ul>
+
+    <div class="app-header-login">
+      <% if user_signed_in? %>
+        <i class="lnr lnr-user"></i> Olá, <%= current_user.name %>! <small><%= link_to 'Sair', destroy_user_session_path, method: :delete %></small>
+      <% else %>
+        <%= link_to 'Entrar / Cadastrar', new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
+</header>
