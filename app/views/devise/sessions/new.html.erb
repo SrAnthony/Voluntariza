@@ -1,13 +1,13 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-devise signup'}) do |f| %>
 
-  <img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <img class="mb-4" src="/logo.png" alt="" width="100" height="100">
   <h1 class="h3 mb-3 font-weight-normal">
     Faça seu login
   </h1>
 
-  <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: 'Email', class: 'form-control' %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: 'Email', class: 'form-control',  style: 'margin-bottom:2px' %>
 
-  <%= f.password_field :password, autocomplete: "current-password", required: true, placeholder: 'Senha', class: 'form-control' %>
+  <%= f.password_field :password, autocomplete: "current-password", required: true, placeholder: 'Senha', class: 'form-control',  style: 'margin-bottom:2px' %>
 
   <% if devise_mapping.rememberable? -%>
     <div class="checkbox mb-3">

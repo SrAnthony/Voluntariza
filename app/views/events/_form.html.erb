@@ -8,25 +8,31 @@
       </ul>
     </div>
   <% end %>
-
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name, class: 'form-control' %>
-  <br>
-  <%= f.label :description, 'Descrição' %>
-  <%= f.text_area :description, class: 'form-control' %>
-  <br>
-  <%= f.label :start_date, 'Data de início' %>
-  <%= f.text_field :start_date, class: 'air-datepicker-time form-control' %>
-  <br>
-  <%= f.label :end_date, 'Data de término' %>
-  <%= f.text_field :end_date, class: 'air-datepicker-time form-control' %>
-  <br>
-  <%= f.label :latitude %>
-  <%= f.text_field :latitude, class: 'form-control' %>
-  <br>
-  <%= f.label :longitude %>
-  <%= f.text_field :longitude, class:'form-control' %>
-
-  <br>
-  <%= f.submit 'Salvar', class: 'btn btn-success' %>
+  <span id="changes" style="display: none">yes</span>
+  <div style="width: 50%; margin: auto; background-color: #fff; padding: 4px; border-radius: 4px;">
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <br>
+    <%= f.label :description, 'Descrição' %>
+    <%= f.text_area :description, class: 'form-control' %>
+    <br>
+    <%= f.label :start_date, 'Data de início' %>
+    <%= f.text_field :start_date, class: 'air-datepicker-time form-control' %>
+    <br>
+    <%= f.label :end_date, 'Data de término' %>
+    <%= f.text_field :end_date, class: 'air-datepicker-time form-control' %>
+    <br>
+    <!-- <input type="hidden" id="lati" name="lag" value="0">
+    <input type="hidden" id="long" name="long" value="0"> -->
+    <!-- <%= f.label :latitude %> -->
+    <%= f.hidden_field :latitude, class: 'form-control', value: @event.latitude != 0 ? @event.latitude : 0 %>
+    <br>
+    <!-- <%= f.label :longitude %> -->
+    <%= f.hidden_field :longitude, class:'form-control', value: @event.longitude != 0 ? @event.longitude : 0 %>
+    <div id="mapouter" style="margin: auto; height: 400px; width: 70%;"></div>
+    <br>
+    <%= f.submit 'Salvar', class: 'btn btn-success' %>
+  <div>
+  <script defer src="/js/criacao_eventos.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD80lU6FBbV1_lCp-n5w_KJD8vf1OhOu14&callback=initMap"></script>
 <% end %>

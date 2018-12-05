@@ -8,7 +8,12 @@
     <div class="app-block-content">
 
       <%= render 'form', event: @event %>
-
     </div>
+    <!-- <script defer src="/js/criacao_eventos.js"></script> -->
+    <span id="changes" style="display: none">yes</span>
+    <!-- <span id="event_latitude"><%= @event.latitude %></span>
+    <span id="event_longitude"><%= @event.longitude %></span> -->
   </div>
 </section>
+<script defer src="/js/criacao_eventos.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD80lU6FBbV1_lCp-n5w_KJD8vf1OhOu14&callback=initMap"></script>
