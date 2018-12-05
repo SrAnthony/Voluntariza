@@ -18,4 +18,20 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def company?
+    role == 'company'
+  end
+
+  def volunteer?
+    role == 'volunteer'
+  end
+
+  def company
+    Company.where(user_id: id).first
+  end
+
+  def volunteer
+    Volunteer.where(user_id: id).first
+  end
 end
