@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  company_id  :bigint(8)
 #  description :text(65535)
+#  name        :string(255)
 #
 
 require 'test_helper'

@@ -3,10 +3,10 @@
   <div class="app-block">
     <div class="app-block-title">
       <h3>
-        <i class="lnr lnr-flag"></i> Eventos
+        <i class="lnr lnr-flag"></i> <%= @event.name %>
       </h3>
 
-      <%= link_to 'Editar', edit_event_path(@event) if user_signed_in? && current_user.company == @event.company %>
+      <%= link_to 'Editar', edit_event_path(@event), class: 'btn' if user_signed_in? && current_user.company == @event.company %>
     </div>
 
     <div class="app-block-content">

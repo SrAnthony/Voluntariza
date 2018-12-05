@@ -1,4 +1,4 @@
-<%= form_with(model: event, local: true) do |form| %>
+<%= form_with(model: event, local: true) do |f| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -9,18 +9,24 @@
     </div>
   <% end %>
 
-  <%= form.label :start_date, 'Data de início' %>
-  <%= form.text_field :start_date, class: 'air-datepicker-time form-control' %>
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name, class: 'form-control' %>
   <br>
-  <%= form.label :end_date, 'Data de término' %>
-  <%= form.text_field :end_date, class: 'air-datepicker-time form-control' %>
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_area :description, class: 'form-control' %>
   <br>
-  <%= form.label :latitude %>
-  <%= form.text_field :latitude, class: 'form-control' %>
+  <%= f.label :start_date, 'Data de início' %>
+  <%= f.text_field :start_date, class: 'air-datepicker-time form-control' %>
   <br>
-  <%= form.label :longitude %>
-  <%= form.text_field :longitude, class:'form-control' %>
+  <%= f.label :end_date, 'Data de término' %>
+  <%= f.text_field :end_date, class: 'air-datepicker-time form-control' %>
+  <br>
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude, class: 'form-control' %>
+  <br>
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude, class:'form-control' %>
 
   <br>
-  <%= form.submit 'Salvar', class: 'btn btn-success' %>
+  <%= f.submit 'Salvar', class: 'btn btn-success' %>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_024128) do
+ActiveRecord::Schema.define(version: 2018_12_05_045151) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_024128) do
     t.datetime "updated_at", null: false
     t.bigint "company_id"
     t.text "description"
+    t.string "name"
     t.index ["company_id"], name: "index_events_on_company_id"
   end
 

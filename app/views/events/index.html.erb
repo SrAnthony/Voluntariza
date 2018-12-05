@@ -16,7 +16,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Descrição</th>
+            <th>Nome</th>
             <th>Data de início</th>
             <th>Data de término</th>
             <th>Empresa</th>
@@ -29,11 +29,7 @@
           <% @events.each do |event| %>
             <tr>
               <td>
-                <% if event.description.present? %>
-                  <%= event.description %>
-                <% else %>
-                  Sem descrição
-                <% end %>
+                <%= event.name %>
               </td>
               <td><%= event.start_date.strftime('%d/%m/%Y - %H:%M') %></td>
               <td><%= event.end_date.strftime('%d/%m/%Y - %H:%M') %></td>
