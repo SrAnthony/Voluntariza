@@ -1,0 +1,60 @@
+<h1>Selecione o tipo de conta</h1>
+
+<fieldset>
+  <legend>
+    <h3>Empresa</h3>
+  </legend>
+  <%= form_for @company do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cnpj %>
+      <%= f.text_field :cnpj %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Cadastrar' %>
+    </div>
+
+  <% end %>
+
+</fieldset>
+
+<br><br>
+
+<fieldset>
+  <legend>
+    <h3>Voluntário</h3>
+  </legend>
+  <%= form_for @volunteer do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cpf %>
+      <%= f.text_field :cpf %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Cadastrar' %>
+    </div>
+
+  <% end %>
+</fieldset>

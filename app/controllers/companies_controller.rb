@@ -7,7 +7,10 @@ class CompaniesController < ApplicationController
   def create
     company = Company.new(company_params)
     company.user_id = current_user.id
-    company.save!
+    Company.transaction do
+      company.save!
+      current_user.update! role: 'company'
+    end
 
     redirect_to events_url, notice: 'Empresa criada com sucesso! :)'
   end
