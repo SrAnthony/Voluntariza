@@ -4,5 +4,6 @@ class UsersController < ApplicationController
   def account
     @company = Company.new
     @volunteer = Volunteer.new
+    render layout: 'devise'
   end
 end

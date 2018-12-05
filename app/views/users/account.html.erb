@@ -1,60 +1,41 @@
-<h1>Selecione o tipo de conta</h1>
+<section class="app-flex account">
+  <div>
+    <i class="lnr lnr-apartment" style="font-size: 4em"></i>
+    <h1 class="h3 mb-3 font-weight-normal">
+      Empresa
+    </h1>
 
-<fieldset>
-  <legend>
-    <h3>Empresa</h3>
-  </legend>
-  <%= form_for @company do |f| %>
+    <%= form_for @company do |f| %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+      <%= f.text_field :name, placeholder: 'Nome', class: 'form-control top' %>
 
-    <div class="field">
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
-    </div>
+      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control middle' %>
 
-    <div class="field">
-      <%= f.label :cnpj %>
-      <%= f.text_field :cnpj %>
-    </div>
+      <%= f.text_field :cnpj, placeholder: 'CNPJ', class: 'form-control bottom' %>
 
-    <div class="actions">
-      <%= f.submit 'Cadastrar' %>
-    </div>
+      <br>
 
-  <% end %>
+      <%= f.submit 'Cadastrar', class: 'btn btn-lg btn-block btn-primary' %>
 
-</fieldset>
+    <% end %>
+  </div>
+  <div class="col">
+    <i class="lnr lnr-user" style="font-size: 4em"></i>
+    <h1 class="h3 mb-3 font-weight-normal">
+      Voluntário
+    </h1>
 
-<br><br>
+    <%= form_for @volunteer do |f| %>
 
-<fieldset>
-  <legend>
-    <h3>Voluntário</h3>
-  </legend>
-  <%= form_for @volunteer do |f| %>
+      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control top' %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+      <%= f.text_field :cpf, placeholder: 'CPF', class: 'form-control bottom' %>
 
-    <div class="field">
-      <%= f.label :phone %>
-      <%= f.text_field :phone %>
-    </div>
+      <br>
 
-    <div class="field">
-      <%= f.label :cpf %>
-      <%= f.text_field :cpf %>
-    </div>
+      <%= f.submit 'Cadastrar', class: 'btn btn-lg btn-block btn-primary' %>
 
-    <div class="actions">
-      <%= f.submit 'Cadastrar' %>
-    </div>
+    <% end %>
 
-  <% end %>
-</fieldset>
+  </div>
+</section>

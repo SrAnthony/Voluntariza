@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>Olá! Você está cadastrado como <%= current_user.role %></p>
-
 <h1>Events</h1>
 
 <table>
@@ -25,7 +23,7 @@
         <td><%= event.longitude %></td>
         <td><%= event.company.name %></td>
         <td><%= link_to 'Show', event %></td>
-        <% if event.company == current_user.company %>
+        <% if user_signed_in? && event.company == current_user.company %>
           <td><%= link_to 'Edit', edit_event_path(event) %></td>
           <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -36,5 +34,6 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path if current_user.company? %> <br>
-<%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+<%= link_to 'New Event', new_event_path if user_signed_in? && current_user.company? %> <br>
+<%= link_to 'Entrar', new_user_session_path unless user_signed_in? %>
+<%= link_to 'Sair', destroy_user_session_path, method: :delete if user_signed_in? %>
