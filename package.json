@@ -1,5 +1,7 @@
 {
   "name": "Voluntariza",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "air-datepicker": "^2.2.3"
+  }
 }

@@ -17,5 +17,7 @@
 //= require jquery
 //= require popper
 //= require bootstrap
+//= require air-datepicker/dist/js/datepicker.min
+//= require air-datepicker/dist/js/i18n/datepicker.pt-BR
 
 //= require_tree .

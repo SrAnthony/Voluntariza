@@ -20,7 +20,8 @@
             <th>Data de início</th>
             <th>Data de término</th>
             <th>Empresa</th>
-            <th colspan="3"></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
 
@@ -42,10 +43,16 @@
                   <i class="lnr lnr-eye"></i> Ver
                 <% end %>
               </td>
-              <% if user_signed_in? && event.company == current_user.company %>
-                <td><%= link_to 'Editar', edit_event_path(event) %></td>
-                <td><%= link_to 'Remover', event, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-              <% end %>
+              <td>
+                <% if user_signed_in? && event.company == current_user.company %>
+                  <%= link_to edit_event_path(event) do %>
+                    <i class="lnr lnr-pencil" title="Editar"></i>
+                  <% end %>
+                  <%= link_to event, method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                    <i class="lnr lnr-trash" style="color: red" title="Remover"></i>
+                  <% end %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

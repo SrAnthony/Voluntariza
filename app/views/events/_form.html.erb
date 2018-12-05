@@ -1,37 +1,26 @@
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
+  <%= form.label :start_date, 'Data de início' %>
+  <%= form.text_field :start_date, class: 'air-datepicker-time form-control' %>
+  <br>
+  <%= form.label :end_date, 'Data de término' %>
+  <%= form.text_field :end_date, class: 'air-datepicker-time form-control' %>
+  <br>
+  <%= form.label :latitude %>
+  <%= form.text_field :latitude, class: 'form-control' %>
+  <br>
+  <%= form.label :longitude %>
+  <%= form.text_field :longitude, class:'form-control' %>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <br>
+  <%= form.submit 'Salvar', class: 'btn btn-success' %>
 <% end %>
