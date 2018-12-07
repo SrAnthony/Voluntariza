@@ -8,6 +8,12 @@
       </ul>
     </div>
   <% end %>
+  <% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", initMap);
+    </script>
+  <% end %>
   <span id="changes" style="display: none">yes</span>
   <div style="width: 50%; margin: auto; background-color: #fff; padding: 1%; border-radius: 4px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);">
     <%= f.label :name, 'Nome' %>
@@ -25,8 +31,15 @@
     <%= f.hidden_field :latitude, class: 'form-control', value: @event.latitude != 0 ? @event.latitude : 0 %>
     <br>
     <%= f.hidden_field :longitude, class:'form-control', value: @event.longitude != 0 ? @event.longitude : 0 %>
-    <div id="mapouter" style="margin: auto; height: 400px; width: 70%;"></div>
+    <div id="mapouter2" style="margin: auto; height: 400px; width: 70%;"></div>
     <br>
     <%= f.submit 'Salvar', class: 'btn btn-success' %>
   <div>
+    <% provide :head_tags do %>
+        <meta name='turbolinks-visit-control' content='reload'>
+        <script>
+          document.addEventListener("DOMContentLoaded", initMap2);
+        </script>
+    <% end %>
+
 <% end %>

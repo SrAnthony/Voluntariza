@@ -1,3 +1,61 @@
+function initMap2() {
+
+    var lat = document.getElementById('event_latitude').value;
+    var lng = document.getElementById('event_longitude').value;
+
+    // if not defined create default position
+    if (!lat || !lng){
+        lat=-27.104629;
+        lng=-52.614600;
+        document.getElementById('event_latitude').value = lat;
+        document.getElementById('event_longitude').value = lng;
+    }
+
+    var myCoords = new google.maps.LatLng(lat, lng);
+
+    var mapOptions = {
+    center: myCoords,
+    zoom: 14
+    };
+
+    var map = new google.maps.Map(document.getElementById('mapouter2'), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myCoords,
+        animation: google.maps.Animation.DROP,
+        map: map,
+        draggable: true
+    });
+
+    // refresh marker position and recenter map on marker
+    function refreshMarker(){
+        var lat = document.getElementById('event_latitude').value;
+        var lng = document.getElementById('event_longitude').value;
+        var myCoords = new google.maps.LatLng(lat, lng);
+        marker.setPosition(myCoords);
+        map.setCenter(marker.getPosition());
+    }
+
+    // when input values change call refreshMarker
+    document.getElementById('event_latitude').onchange = refreshMarker;
+    document.getElementById('event_longitude').onchange = refreshMarker;
+
+    // when marker is dragged update input values
+    marker.addListener('drag', function() {
+        latlng = marker.getPosition();
+        newlat=(Math.round(latlng.lat()*1000000))/1000000;
+        newlng=(Math.round(latlng.lng()*1000000))/1000000;
+        document.getElementById('event_latitude').value = newlat;
+        document.getElementById('event_longitude').value = newlng;
+    });
+
+    // When drag ends, center (pan) the map on the marker position
+    marker.addListener('dragend', function() {
+        map.panTo(marker.getPosition());
+    });
+
+}
+
 function initMap() {
   var myLatLng = {
     lat: parseFloat(document.getElementById('event_latitude').innerHTML),
