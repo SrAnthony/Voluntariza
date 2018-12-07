@@ -1,5 +1,5 @@
 <section class="app-flex account">
-  <div>
+  <div style='background-color: #fff; padding: 1%; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);'>
     <i class="lnr lnr-apartment" style="font-size: 4em"></i>
     <h1 class="h3 mb-3 font-weight-normal">
       Empresa
@@ -7,11 +7,11 @@
 
     <%= form_for @company do |f| %>
 
-      <%= f.text_field :name, placeholder: 'Nome', class: 'form-control top' %>
+      <%= f.text_field :name, placeholder: 'Nome', class: 'form-control top',  style: 'margin-bottom:4px'  %>
 
-      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control middle' %>
+      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control middle',  style: 'margin-bottom:4px'  %>
 
-      <%= f.text_field :cnpj, placeholder: 'CNPJ', class: 'form-control bottom' %>
+      <%= f.text_field :cnpj, placeholder: 'CNPJ', class: 'form-control bottom'  %>
 
       <br>
 
@@ -19,7 +19,7 @@
 
     <% end %>
   </div>
-  <div class="col">
+  <div class="col" style='background-color: #fff; padding: 1%; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);' >
     <i class="lnr lnr-user" style="font-size: 4em"></i>
     <h1 class="h3 mb-3 font-weight-normal">
       Voluntário
@@ -27,7 +27,7 @@
 
     <%= form_for @volunteer do |f| %>
 
-      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control top' %>
+      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control top',  style: 'margin-bottom:4px'  %>
 
       <%= f.text_field :cpf, placeholder: 'CPF', class: 'form-control bottom' %>
 
