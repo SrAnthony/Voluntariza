@@ -7,7 +7,7 @@
     <ul class="app-header-list">
       <li>
         <%= link_to events_path, class: "#{'active' if controller_name == 'events'}" do %>
-          <i class="lnr lnr-flag"></i> Eventos
+          <i class="lnr lnr-calendar-full"></i> Eventos
         <% end %>
       </li>
       <li>
@@ -19,7 +19,7 @@
 
     <div class="app-header-login">
       <% if user_signed_in? %>
-        <i class="lnr lnr-user"></i> Olá, <%= current_user.name %>! <small><%= link_to 'Sair', destroy_user_session_path, method: :delete %></small>
+        <i class="lnr lnr-user"></i> Olá, <%= current_user.name %>! <small><%= link_to 'Sair', destroy_user_session_path, method: :delete, style: "border: 1px solid rgb(244, 67, 54); color: white; padding: 4px; background: rgb(244, 67, 54); border-radius: 4px; box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); margin-left: 2px;" %></small>
       <% else %>
         <%= link_to 'Entrar / Cadastrar', new_user_session_path %>
       <% end %>
