@@ -1,8 +1,17 @@
 function initMap() {
-
   var myLatLng = {
-    lat: -27.1009343,
-    lng: -52.615699
+    lat: parseFloat(document.getElementById('event_latitude').innerHTML),
+    lng: parseFloat(document.getElementById('event_longitude').innerHTML)
+  };
+
+  document.getElementById("event_latitude").style.display = "none";
+  document.getElementById("event_longitude").style.display = "none";
+  window.onload = function() {
+    var lati = parseFloat(document.getElementById('event_latitude').innerHTML);
+    var long = parseFloat(document.getElementById('event_longitude').innerHTML);
+    myLatLng = {lat: lati, lng: long };
+    var center = {lat: lati, lng: long };
+    placeMarker(center);
   };
 
   var map = new google.maps.Map(document.getElementById('mapouter'), {
@@ -77,13 +86,4 @@ function initMap() {
       alert("É necessário adicionar um marcador para seu evento");
     }
   });
-
-  document.getElementById("event_latitude").style.display = "none";
-  document.getElementById("event_longitude").style.display = "none";
-  window.onload = function() {
-    var lati = parseFloat(document.getElementById('event_latitude').innerHTML);
-    var long = parseFloat(document.getElementById('event_longitude').innerHTML);
-    var center = {lat: lati, lng: long }
-    placeMarker(center);
-  };
 }
