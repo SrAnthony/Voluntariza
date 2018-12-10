@@ -26,8 +26,9 @@
     </h1>
 
     <%= form_for @volunteer do |f| %>
+      <%= f.text_field :name, placeholder: 'Nome', class: 'form-control top',  style: 'margin-bottom:4px'  %>
 
-      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control top',  style: 'margin-bottom:4px'  %>
+      <%= f.text_field :phone, placeholder: 'Telefone', class: 'form-control middle',  style: 'margin-bottom:4px'  %>
 
       <%= f.text_field :cpf, placeholder: 'CPF', class: 'form-control bottom' %>
 

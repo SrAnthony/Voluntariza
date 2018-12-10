@@ -27,6 +27,17 @@
         <strong>Data de término:</strong>
         <%= @event.end_date.strftime('%d/%m/%Y - %H:%M') %>
       </p>
+
+      <p>
+        <strong>Empresa: </strong>
+        <%= @event.company.name %>
+      </p>
+
+      <p>
+        <strong>Contato: </strong>
+        <%= @event.company.phone %>
+      </p>
+
       <span id="event_latitude"><%= @event.latitude %></span>
       <span id="event_longitude"><%= @event.longitude %></span>
       <span id="changes" style="display: none">no</span>
